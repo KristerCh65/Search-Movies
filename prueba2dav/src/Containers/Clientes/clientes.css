@@ -1,0 +1,20 @@
+.cliente{
+    display: grid;
+    grid-template-rows: 80px 60px calc(100% - 260px);
+}
+
+.cliente .ms-CommandBar{
+    background-color: turquoise;
+}
+
+.cliente .ms-CommandBar button{
+    background-color: turquoise;
+}
+
+.cliente .ms-CommandBar button :hover{
+    background-color: cyan;
+}
+
+.listaContenedor{
+    overflow: auto;
+}
