@@ -41,8 +41,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Deploy react app to github pages
+      - name: Surge-Deploy-React-App
         # You may pin to the exact commit or the version.
-        # uses: tanwanimohit/deploy-react-to-ghpages@88c048cc9d31f67a792eec8cf9e94c10eb701dd2
-        uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
+        # uses: UsmanAsif193/Surge-Action@ef22b2578f2f726fa5a0d8cdfa74ed65d4decec2
+        uses: UsmanAsif193/Surge-Action@v1.00
           
