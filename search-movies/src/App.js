@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import './index.css';
 import 'bulma/css/bulma.css'
 import {Title} from './Components/Title'
 import { SearchForm } from './Components/searchForm';

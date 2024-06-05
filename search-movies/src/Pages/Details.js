@@ -27,12 +27,14 @@ export class Details extends Component{
     render(){
         const {Title, Poster, Actors, Metascore, Plot } = this.state.movie
         return(
-            <div>
-                <h1>{Title}</h1>
-                <img src={Poster}/>
-                <h3>{Actors}</h3>
-                <span>{Metascore}</span>
-                <p>{Plot}</p>
+            <div className="detail">
+                <img src={Poster} className="poster"/>
+                <div class="title">{Title}</div>
+                <div class="info">
+                <span class="year">{Actors}</span>
+                <span class="length">{Metascore}</span>
+                </div>                
+                <div className="desc">{Plot}</div>
             </div>
         )
     }
