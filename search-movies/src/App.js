@@ -26,14 +26,14 @@ class App extends Component {
 
   render(){
     const url = new URL(document.location)
-    const hasId = url.searchParams.has(`id`)
+    const hasId = url.searchParams.has(`imdbID`)
     if(hasId){
       return < Details/>
     }
     return (
       <div className="App">
-        <header className="App-header">
-          <Title>Search Movies</Title>
+        <header className="app-header">
+          <Title className="strong">Search Movies</Title>
           <div className='Searchfrom-wrapper'>
             <SearchForm onResults={this._handleResults}/>
           </div>

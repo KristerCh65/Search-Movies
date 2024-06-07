@@ -16,7 +16,7 @@ export class Movie extends Component{
         return(
             <section className="movies">
                 <a href={`?id=${id}`} className="card">
-                <div class="movie">
+                <div className="movie">
                     <figure className="image">
                     <img alt={title}
                         src={poster} className="poster" />

@@ -11,7 +11,7 @@ export class Details extends Component{
     state={movie:{}}
 
     _fetchMovie = ({id}) => {
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${id}`)
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
         .then(res => res.json())
         .then(movie => {
             console.log({movie})
@@ -29,10 +29,10 @@ export class Details extends Component{
         return(
             <div className="detail">
                 <img src={Poster} className="poster"/>
-                <div class="title">{Title}</div>
-                <div class="info">
-                <span class="year">{Actors}</span>
-                <span class="length">{Metascore}</span>
+                <div className="title">{Title}</div>
+                <div className="info">
+                <span className="year">{Actors}</span>
+                <span className="length">{Metascore}</span>
                 </div>                
                 <div className="desc">{Plot}</div>
             </div>
