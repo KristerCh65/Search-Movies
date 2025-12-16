@@ -14,7 +14,7 @@ export class SearchForm extends Component {
   _handleSubmit = (e) => {
     e.preventDefault()
     const {inputMovie} = this.state
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
     .then(res => res.json())
     .then(results => {
         const{Search = [], totalResults} = results
@@ -25,20 +25,16 @@ export class SearchForm extends Component {
 
   render() {
     return (
-        <form onSubmit={this._handleSubmit}>
-            <div className="field has-addons">
-                <div className="control">
+        <form onSubmit={this._handleSubmit} className="search-form">
+            <div className="search-form-wrapper">
                 <input
-                    className="input"
+                    className="search-input"
                     onChange={this._handleChange}
                     type="text"
-                    placeholder="Movie to search.."
+                    placeholder="Search for a movie..."
+                    value={this.state.inputMovie}
                 />
-                </div>
-                <br/>
-                <div className="control">
-                <button className="play is-info">Search</button>
-                </div>
+                <button type="submit" className="search-button">Search</button>
             </div>
         </form>
     );

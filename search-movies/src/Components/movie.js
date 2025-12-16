@@ -13,24 +13,25 @@ export class Movie extends Component{
     render (){
         const {id, poster, title, year} = this.props
 
+        const handleClick = (e) => {
+            e.preventDefault()
+            window.location.href = `?id=${id}`
+        }
+
         return(
-            <section className="movies">
-                <a href={`?id=${id}`} className="card">
-                <div className="movie">
-                    <figure className="image">
-                    <img alt={title}
-                        src={poster} className="poster" />
-                    </figure>
+            <div onClick={handleClick} className="movie-card">
+                <div className="movie-poster-container">
+                    <img 
+                        alt={title}
+                        src={poster !== 'N/A' ? poster : 'https://via.placeholder.com/300x450?text=No+Image'} 
+                    />
+                    <div className="movie-overlay"></div>
                 </div>
-                <div className="card-content">
-                    <div className="info">
-                        <p className="title is-4">{title}</p>
-                           <p className="year subtitle is-6">{year}</p>
-                    </div>
+                <div className="movie-info">
+                    <h3 className="movie-title">{title}</h3>
+                    <p className="movie-year">{year}</p>
                 </div>
-            </a>
-            </section>
-            
+            </div>
         )
     }
 }

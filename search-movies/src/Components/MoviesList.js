@@ -13,7 +13,6 @@ export class MoviesList extends Component{
 
         return (
             <div className="MoviesList">
-                <hr/>
             {
             movies.map(movie => {
                 return (

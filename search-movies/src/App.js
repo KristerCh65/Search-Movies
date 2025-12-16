@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './index.css';
 import 'bulma/css/bulma.css'
@@ -11,6 +10,12 @@ import {Details} from './Pages/Details'
 class App extends Component {
 
   state = { usedSearch: false, results: []}
+
+  componentDidMount() {
+    window.addEventListener('popstate', () => {
+      this.forceUpdate()
+    })
+  }
 
   _handleResults = (results) => {
     this.setState({results, usedSearch: true})
@@ -26,9 +31,12 @@ class App extends Component {
 
   render(){
     const url = new URL(document.location)
-    const hasId = url.searchParams.has(`imdbID`)
+    const hasId = url.searchParams.has(`id`)
+    console.log('App render - hasId:', hasId, 'URL:', document.location.href)
     if(hasId){
-      return < Details/>
+      const id = url.searchParams.get(`id`)
+      console.log('Rendering Details with id:', id)
+      return <Details id={id}/>
     }
     return (
       <div className="App">

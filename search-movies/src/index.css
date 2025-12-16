@@ -28,6 +28,14 @@ body {
   font: normal 14px system-ui, sans-serif;
 	text-shadow: 0 1px 1px hsl(0 0% 0% / 20%);
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 
@@ -37,27 +45,27 @@ Header
 header {
   padding: 30px;
   position: relative;
-  height: 70px;
+  height: auto;
+  min-height: 70px;
+}
 
-  Title {
-    font-size: 20px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #1c222b;
+header .Title {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1c222b;
+}
 
-    strong {
-      color: #fff;
-      display: inline-block;
-      border-radius: 30px;
-      padding: 6px;
-      font-size: 83%;
-      line-height: 1;
-      position: relative;
-      top: -1px;
-      left: 2px;
-    }
-  }
-
+header .Title strong {
+  color: #fff;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 6px;
+  font-size: 83%;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+  left: 2px;
 }
 
 
